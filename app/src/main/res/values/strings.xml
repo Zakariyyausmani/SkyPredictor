@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Waves of Food</string>
+    <string name="favorite_button_desc">Add to favorites</string>
+    <!-- Add other string resources as needed -->
+
+    <string name="temperature_format">Temperature: %1$s</string>
+    <string name="condition_format">Condition: %1$s</string>
+    <string name="updated_at_format">Last updated: %1$s</string>
+
+
+</resources>

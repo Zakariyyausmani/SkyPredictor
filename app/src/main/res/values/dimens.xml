@@ -1,0 +1,3 @@
+<resources>
+    <dimen name="shadow_size">4dp</dimen> <!-- Change value as needed -->
+</resources>

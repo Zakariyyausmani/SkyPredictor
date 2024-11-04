@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Video background for weather animation -->
+    <VideoView
+        android:id="@+id/weather_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <!-- Search bar -->
+    <AutoCompleteTextView
+        android:id="@+id/cityInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter city name"
+        android:background="@drawable/rounded_input_background"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:background="@drawable/rounded_button_background"
+        android:layout_below="@id/cityInput"
+        android:layout_marginTop="10dp" />
+
+    <!-- Main container for weather details -->
+    <RelativeLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchButton"
+        android:visibility="visible"
+        android:paddingTop="20dp">
+
+        <!-- Location and update time information -->
+        <LinearLayout
+            android:id="@+id/addressContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="City, Country"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+            <TextView
+                android:id="@+id/updated_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Last updated at: XX:XX"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+        </LinearLayout>
+
+        <!-- Weather overview section -->
+        <LinearLayout
+            android:id="@+id/overviewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:text="Weather Status"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="75sp"
+                android:fontFamily="sans-serif-thin"
+                android:layout_gravity="center"
+                android:text="XX°C"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+        </LinearLayout>
+
+        <!-- Detailed weather information -->
+        <LinearLayout
+            android:id="@+id/detailsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/humidityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity: XX%"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+            <TextView
+                android:id="@+id/airQualityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Air Quality: Good"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+            <!-- Additional weather details like sunrise, sunset, and wind -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!-- Sunrise details -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/sunrise" /> <!-- URL to sunrise icon -->
+
+                    <TextView
+                        android:id="@+id/sunriseText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sunrise"
+                        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+                    <TextView
+                        android:id="@+id/sunrise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XX:XX"
+                        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+                </LinearLayout>
+
+                <!-- Sunset details -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/sunset" /> <!-- URL to sunset icon -->
+
+                    <TextView
+                        android:id="@+id/sunsetText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sunset"
+                        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+                    <TextView
+                        android:id="@+id/sunset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XX:XX"
+                        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+                </LinearLayout>
+
+                <!-- Wind details -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/wind" /> <!-- URL to wind icon -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wind"
+                        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+                    <TextView
+                        android:id="@+id/wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XX km/h"
+                        android:textColor="@android:color/black" /> <!-- Adjust text color -->
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Forecast TextView -->
+            <TextView
+                android:id="@+id/forecastTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forecast: XX"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/black" /> <!-- Adjust text color -->
+
+            <!-- Favorite button -->
+            <ImageView
+                android:id="@+id/favorite_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="end"
+                android:contentDescription="Add to favorites" />
+
+            <!-- View Favorites Button -->
+            <Button
+                android:id="@+id/viewFavoritesButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Favorites"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/favorite_button" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Loader for progress indication -->
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="157dp"
+        android:layout_height="234dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+
+    <!-- Error message display -->
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

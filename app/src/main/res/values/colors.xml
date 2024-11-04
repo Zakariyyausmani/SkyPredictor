@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#323E83</color>
+    <color name="white">#FFFFFFFF</color>
+        <color name="colorPrimary">#6200EE</color> <!-- Example primary color -->
+        <color name="colorAccent">#03DAC5</color>
+    <color name="backgroundColor">#F3F4F6</color>
+
+    <color name="colorPrimaryDark">#303F9F</color>
+        <color name="background_color">#E1F5FE</color>
+
+
+
+
+        <color name="clear_sky_text_color">#FFFFFF</color> <!-- White for clear sky -->
+        <color name="cloudy_text_color">#AAAAAA</color> <!-- Gray for cloudy -->
+        <color name="rain_text_color">#007BFF</color> <!-- Blue for rain -->
+        <color name="storm_text_color">#FF0000</color> <!-- Red for storms -->
+        <color name="snow_text_color">#FFFFFF</color> <!-- White for snow -->
+        <color name="fog_text_color">#CCCCCC</color> <!-- Light gray for fog -->
+        <color name="windy_text_color">#00FF00</color> <!-- Green for windy -->
+        <color name="dust_text_color">#FFA500</color> <!-- Orange for dust -->
+        <color name="smoke_text_color">#A0522D</color> <!-- Brown for smoke -->
+        <color name="default_text_color">#000000</color> <!-- Default text color -->
+
+
+
+
+    <!-- Add other colors as needed -->
+</resources>
